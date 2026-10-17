@@ -1,0 +1,9 @@
+[microvm N=1] booted 0 of 1
+  --- first guest log tail:
+     [    0.000000] Hyper-V: LAPIC Timer Frequency: 0x3d0900
+     [    0.000000] tsc: Marking TSC unstable due to running on Hyper-V
+     [    0.000000] tsc: Detected 2807.998 MHz processor
+     [    0.000040] e820:
+  --- qemu stderr:
+  exited: False
+RESULT kind=win-qemu-microvm N=1 alive=1 avg_boot_s=0 qemu_working_set_total_mb=106 per_guest_mb=106 win_free_delta_mb=41

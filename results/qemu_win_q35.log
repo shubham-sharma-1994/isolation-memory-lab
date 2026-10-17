@@ -1,0 +1,13 @@
+[q35 N=1] booted 1 of 1
+RESULT kind=win-qemu-q35 N=1 alive=1 avg_boot_s=3.8 qemu_working_set_total_mb=124 per_guest_mb=124 win_free_delta_mb=15
+[q35 N=5] booted 5 of 5
+RESULT kind=win-qemu-q35 N=5 alive=5 avg_boot_s=6.5 qemu_working_set_total_mb=619 per_guest_mb=124 win_free_delta_mb=331
+[microvm N=1] booted 0 of 1
+  --- first guest log tail:
+     [    0.015088]  start_kernel+0x357/0x499
+     [    0.015090]  x86_64_start_reservations+0x24/0x2a
+     [    0.015092]  x86_64_start_kernel+0x72/0x7c
+     [    0.015093]  secondary
+  --- qemu stderr:
+  exited: False
+RESULT kind=win-qemu-microvm N=1 alive=1 avg_boot_s=0 qemu_working_set_total_mb=105 per_guest_mb=105 win_free_delta_mb=190

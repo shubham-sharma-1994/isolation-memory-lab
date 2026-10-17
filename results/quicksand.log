@@ -1,0 +1,12 @@
+== 1. install Quicksand (isolated venv, outside the repo)
+installed: quick-sandbox 0.13.0
+venv size: 219 MB
+free RAM: 4516 MB
+== 2. N=1 sandboxes
+RESULT quicksand N=1 qemu_procs=1 qemu_working_set_total_mb=214 per_guest_mb=214 total_boot_s=5.1 available_ram_drop_mb=91
+   (whole run 30s, free RAM afterwards 4579 MB)
+== 2. N=5 sandboxes
+RESULT quicksand N=5 qemu_procs=5 qemu_working_set_total_mb=986 per_guest_mb=197 total_boot_s=18.7 available_ram_drop_mb=840
+   (whole run 40s, free RAM afterwards 4629 MB)
+leftover qemu processes: 0
+== done

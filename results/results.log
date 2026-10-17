@@ -1,0 +1,25 @@
+=== fc N=1
+[fc N=1] booted 1 of 1 guests
+RESULT kind=fc N=1 alive=1 avg_boot_s=1.5 vmm_pss_total_mb=47 vmm_rss_total_mb=47 pss_per_guest_mb=47 wsl_used_delta_mb=46 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== fc N=5
+[fc N=5] booted 5 of 5 guests
+RESULT kind=fc N=5 alive=5 avg_boot_s=1.6 vmm_pss_total_mb=229 vmm_rss_total_mb=238 pss_per_guest_mb=45 wsl_used_delta_mb=236 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== ch N=1
+[ch N=1] booted 1 of 1 guests
+RESULT kind=ch N=1 alive=1 avg_boot_s=1.0 vmm_pss_total_mb=57 vmm_rss_total_mb=57 pss_per_guest_mb=57 wsl_used_delta_mb=53 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== ch N=5
+[ch N=5] booted 5 of 5 guests
+RESULT kind=ch N=5 alive=5 avg_boot_s=1.1 vmm_pss_total_mb=268 vmm_rss_total_mb=287 pss_per_guest_mb=53 wsl_used_delta_mb=275 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== qmicro N=1
+[qmicro N=1] booted 1 of 1 guests
+RESULT kind=qmicro N=1 alive=1 avg_boot_s=10.6 vmm_pss_total_mb=107 vmm_rss_total_mb=113 pss_per_guest_mb=107 wsl_used_delta_mb=79 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== qmicro N=5
+[qmicro N=5] booted 5 of 5 guests
+RESULT kind=qmicro N=5 alive=5 avg_boot_s=2.8 vmm_pss_total_mb=385 vmm_rss_total_mb=565 pss_per_guest_mb=77 wsl_used_delta_mb=347 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== q35 N=1
+[q35 N=1] booted 1 of 1 guests
+RESULT kind=q35 N=1 alive=1 avg_boot_s=1.5 vmm_pss_total_mb=108 vmm_rss_total_mb=115 pss_per_guest_mb=108 wsl_used_delta_mb=78 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== q35 N=5
+[q35 N=5] booted 5 of 5 guests
+RESULT kind=q35 N=5 alive=5 avg_boot_s=2.1 vmm_pss_total_mb=391 vmm_rss_total_mb=575 pss_per_guest_mb=78 wsl_used_delta_mb=364 vmmemWSL_delta_mb=0 win_free_delta_mb=0
+=== ALL DONE

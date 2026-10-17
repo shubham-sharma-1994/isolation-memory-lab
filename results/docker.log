@@ -1,0 +1,27 @@
+== 1. baseline (before Docker Desktop)
+baseline                           free RAM  3701 MB | vmmem   800 MB | Docker Desktop processes 0 = 0 MB
+== 2. start Docker Desktop and wait for the engine (up to 4 minutes)
+engine up after ~5s: Docker 29.7.2
+Docker Desktop idle (no containers) free RAM  1928 MB | vmmem  2052 MB | Docker Desktop processes 10 = 828 MB
+   => base cost of Docker Desktop: vmmem +1252 MB, Docker processes +832 MB, free RAM -1874 MB
+== 3. pull alpine
+docker.io/library/alpine:latest
+== 4. 1 idle container(s): alpine sleep
+Docker + 1 container(s)            free RAM  1715 MB | vmmem  2121 MB | Docker Desktop processes 10 = 874 MB
+   => vs engine idle: vmmem +69 MB, free RAM change 202 MB
+   docker stats (memory the engine reports per container):
+mem1: 1.418MiB / 7.689GiB
+scriptorium-postgres-1: 44.96MiB / 7.689GiB
+== 4. 5 idle container(s): alpine sleep
+Docker + 5 container(s)            free RAM  1647 MB | vmmem  2154 MB | Docker Desktop processes 10 = 964 MB
+   => vs engine idle: vmmem +102 MB, free RAM change 276 MB
+   docker stats (memory the engine reports per container):
+mem5: 1.383MiB / 7.689GiB
+mem4: 1.234MiB / 7.689GiB
+mem3: 1.387MiB / 7.689GiB
+mem2: 1.246MiB / 7.689GiB
+mem1: 876KiB / 7.689GiB
+== 5. shut Docker Desktop down again
+✓ Stopping Docker Desktop
+after stopping Docker Desktop      free RAM  3210 MB | vmmem  1377 MB | Docker Desktop processes 0 = 0 MB
+== done

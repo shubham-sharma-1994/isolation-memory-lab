@@ -1,0 +1,5 @@
+.venv-quicksand/
+agy-accounts/
+*oauth-token*
+*.ext4
+*.img

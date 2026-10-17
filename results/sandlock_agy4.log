@@ -1,0 +1,30 @@
+agy: 1.4.0 | sandlock: sandlock 0.8.9
+login fingerprints before: a=e75a3f55 b=4c0b9752
+
+== STEP 1: agy models, 4 sessions at the same time
+peak (PSS of all agy+sandlock processes): 419 MB across up to 12 processes
+  s1 (acct a): gemini-3.8-flash-high	Gemini 3.8 Flash (High) | elapsed 0:07.82 | max RSS 183 MB | exit 0
+  s2 (acct a): gemini-3.8-flash-high	Gemini 3.8 Flash (High) | elapsed 0:07.71 | max RSS 181 MB | exit 0
+  s3 (acct b): gemini-3.8-flash-high	Gemini 3.8 Flash (High) | elapsed 0:07.82 | max RSS 182 MB | exit 0
+  s4 (acct b): gemini-3.8-flash-high	Gemini 3.8 Flash (High) | elapsed 0:07.79 | max RSS 181 MB | exit 0
+
+== STEP 2: a real task in each session (file creation through agy's own tools), 4 at the same time
+peak (PSS of all agy+sandlock processes): 459 MB across up to 16 processes
+  s1 (acct a): reply: [<google-verification-link>] | proof.txt: [none] | elapsed 0:08.63 | max RSS 191 MB | exit 1
+  s2 (acct a): reply: [<google-verification-link>] | proof.txt: [none] | elapsed 0:10.07 | max RSS 190 MB | exit 1
+  s3 (acct b): reply: [DONE ] | proof.txt: [SANDLOCK] | elapsed 0:36.01 | max RSS 237 MB | exit 0
+  s4 (acct b): reply: [DONE ] | proof.txt: [SANDLOCK] | elapsed 0:24.39 | max RSS 240 MB | exit 0
+
+== STEP 3: isolation probes under the same Sandlock rules (session s1, account a)
+  list account b's login folder       -> ls: cannot open directory '/home/user/agy-accounts/b/home/.gemini/antigravity-cli/': 
+  list the real ~/.gemini              -> ls: cannot open directory '/home/user/.gemini': Permission denied
+  list the Windows drive /mnt/c        -> ls: cannot open directory '/mnt/c': Permission denied
+  list session s2's working folder     -> ls: cannot open directory '/tmp/slagy/s2': Permission denied
+  write a file into the real HOME      -> /bin/sh: 1: cannot create /home/user/sandlock_escape_test: Permission denied
+  list its own working folder (ok)     -> <empty>
+  other processes visible from inside: ls: cannot open directory '/proc': Permission denied
+  (no escape file was created on the host)
+
+login fingerprints after:  a=7e4b68ae b=8617724e
+leftover agy/sandlock processes: 0
+=== DONE
